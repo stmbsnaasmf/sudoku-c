@@ -94,7 +94,7 @@ bool isSudokuSubMatrixValid(int matrix[9][9], int subMatrixNo)
 bool isSudokuValid(int matrix[9][9])
 {
 	bool isValid = true;
-	
+
 	for (int i = 0; i < 9; i++)
 	{
 		if (!isSudokuRowValid(matrix, i))
@@ -108,14 +108,14 @@ bool isSudokuValid(int matrix[9][9])
 			printf("Col %d is invalid.\n", i);
 			isValid = false;
 		}
-		
+
 		if (!isSudokuSubMatrixValid(matrix, i))
 		{
 			printf("submatrix %d is invalid.\n", i);
 			isValid = false;
 		}
 	}
-	
+
 	return isValid;
 }
 
@@ -124,7 +124,7 @@ bool isSudokuColValid(int matrix[9][9], int colNo)
 	for (int i = 0; i < 9; i++)
 	{
 		int number = matrix[i][colNo];
-		
+
 		for (int j = 0; j < i; j++)
 		{
 			if (number != 0 && matrix[j][colNo] == number)
@@ -133,7 +133,7 @@ bool isSudokuColValid(int matrix[9][9], int colNo)
 			}
 		}
 	}
-	
+
 	return true;
 }
 
@@ -142,7 +142,7 @@ bool isSudokuRowValid(int matrix[9][9], int rowNo)
 	for (int i = 0; i < 9; i++)
 	{
 		int number = matrix[rowNo][i];
-		
+
 		for (int j = 0; j < i; j++)
 		{
 			if (number != 0 && matrix[rowNo][j] == number)
@@ -151,7 +151,7 @@ bool isSudokuRowValid(int matrix[9][9], int rowNo)
 			}
 		}
 	}
-	
+
 	return true;
 }
 
@@ -169,7 +169,7 @@ void printSudoku(int matrix[9][9])
 			}
 		}
 		printf("\n");
-		
+
 		if (2 == i % 3)
 		{
 			printf("\n");
